@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dlq-rT-MQx">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Input View Controller-->
+        <scene sceneID="bhR-VW-Ogp">
+            <objects>
+                <viewController id="Dlq-rT-MQx" customClass="InputViewController" customModule="GiftsForEveryone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="afl-8f-uWG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zU8-Xf-rvk">
+                                <rect key="frame" x="20" y="20" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="xIx-zx-Hfz">
+                                <rect key="frame" x="20" y="49" width="335" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="AnF-uR-RU8"/>
+                                </constraints>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sex:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6as-Vy-pJ7">
+                                <rect key="frame" x="20" y="121" width="33" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ct4-L6-elJ">
+                                <rect key="frame" x="61" y="121" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="S6E-b0-gbm">
+                                <rect key="frame" x="61" y="116" width="294" height="32"/>
+                                <segments>
+                                    <segment title="male"/>
+                                    <segment title="female"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current date (simulated):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATc-YW-NiQ">
+                                <rect key="frame" x="20" y="150" width="192" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="acG-jP-kac">
+                                <rect key="frame" x="20" y="179" width="335" height="216"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPb-i6-XCI">
+                                <rect key="frame" x="160.5" y="617" width="54" height="30"/>
+                                <state key="normal" title="Receive"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1R-FD-vLn">
+                                <rect key="frame" x="130" y="567" width="115" height="30"/>
+                                <state key="normal" title="Randomize input"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cRi-OV-B2b" firstAttribute="trailing" secondItem="S6E-b0-gbm" secondAttribute="trailing" constant="20" id="0ME-2X-YWM"/>
+                            <constraint firstItem="zU8-Xf-rvk" firstAttribute="top" secondItem="cRi-OV-B2b" secondAttribute="top" constant="20" id="6JC-nZ-s7Z"/>
+                            <constraint firstItem="yPb-i6-XCI" firstAttribute="top" secondItem="g1R-FD-vLn" secondAttribute="bottom" constant="20" id="7CS-Us-L1s"/>
+                            <constraint firstItem="ATc-YW-NiQ" firstAttribute="top" secondItem="6as-Vy-pJ7" secondAttribute="bottom" constant="8" id="Cb2-Tb-Y2Y"/>
+                            <constraint firstItem="g1R-FD-vLn" firstAttribute="centerX" secondItem="cRi-OV-B2b" secondAttribute="centerX" id="H2Z-DE-tHr"/>
+                            <constraint firstItem="6as-Vy-pJ7" firstAttribute="top" secondItem="xIx-zx-Hfz" secondAttribute="bottom" constant="8" id="LGZ-Pm-dPP"/>
+                            <constraint firstItem="cRi-OV-B2b" firstAttribute="trailing" secondItem="acG-jP-kac" secondAttribute="trailing" constant="20" id="MlQ-Mg-s1q"/>
+                            <constraint firstItem="ct4-L6-elJ" firstAttribute="leading" secondItem="6as-Vy-pJ7" secondAttribute="trailing" constant="8" id="Rob-ar-QQj"/>
+                            <constraint firstItem="ct4-L6-elJ" firstAttribute="centerY" secondItem="6as-Vy-pJ7" secondAttribute="centerY" id="YAf-rb-7lz"/>
+                            <constraint firstItem="yPb-i6-XCI" firstAttribute="centerX" secondItem="cRi-OV-B2b" secondAttribute="centerX" id="YR1-jt-7R8"/>
+                            <constraint firstItem="cRi-OV-B2b" firstAttribute="bottom" secondItem="yPb-i6-XCI" secondAttribute="bottom" constant="20" id="aUO-Mx-PIq"/>
+                            <constraint firstItem="S6E-b0-gbm" firstAttribute="leading" secondItem="6as-Vy-pJ7" secondAttribute="trailing" constant="8" symbolic="YES" id="cOh-VT-TfT"/>
+                            <constraint firstItem="cRi-OV-B2b" firstAttribute="trailing" secondItem="xIx-zx-Hfz" secondAttribute="trailing" constant="20" id="dbt-RH-ZFG"/>
+                            <constraint firstItem="6as-Vy-pJ7" firstAttribute="leading" secondItem="cRi-OV-B2b" secondAttribute="leading" constant="20" id="eho-jI-dYf"/>
+                            <constraint firstItem="acG-jP-kac" firstAttribute="top" secondItem="ATc-YW-NiQ" secondAttribute="bottom" constant="8" id="lH6-kD-WAZ"/>
+                            <constraint firstItem="xIx-zx-Hfz" firstAttribute="leading" secondItem="cRi-OV-B2b" secondAttribute="leading" constant="20" id="nCS-do-IAQ"/>
+                            <constraint firstItem="ATc-YW-NiQ" firstAttribute="leading" secondItem="cRi-OV-B2b" secondAttribute="leading" constant="20" id="qjr-ch-Jg0"/>
+                            <constraint firstItem="acG-jP-kac" firstAttribute="leading" secondItem="cRi-OV-B2b" secondAttribute="leading" constant="20" id="r9f-Wm-7eC"/>
+                            <constraint firstItem="xIx-zx-Hfz" firstAttribute="top" secondItem="zU8-Xf-rvk" secondAttribute="bottom" constant="8" symbolic="YES" id="rgN-aW-RHF"/>
+                            <constraint firstItem="S6E-b0-gbm" firstAttribute="centerY" secondItem="6as-Vy-pJ7" secondAttribute="centerY" id="rvh-oR-MA2"/>
+                            <constraint firstItem="zU8-Xf-rvk" firstAttribute="leading" secondItem="cRi-OV-B2b" secondAttribute="leading" constant="20" id="xXe-Jm-6qw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cRi-OV-B2b"/>
+                    </view>
+                    <connections>
+                        <outlet property="birthdatePicker" destination="xIx-zx-Hfz" id="NUu-9T-cak"/>
+                        <outlet property="genderLabel" destination="ct4-L6-elJ" id="Cwx-9D-Tz4"/>
+                        <outlet property="genderSegmentedControl" destination="S6E-b0-gbm" id="gxN-PY-4se"/>
+                        <outlet property="randomizeInputButton" destination="g1R-FD-vLn" id="tgi-dm-cgw"/>
+                        <outlet property="receiveButton" destination="yPb-i6-XCI" id="YAi-2d-mAE"/>
+                        <outlet property="simulatedDatePicker" destination="acG-jP-kac" id="x8D-7T-CRe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1h2-OE-oG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

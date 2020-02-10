@@ -7,31 +7,44 @@
 //
 
 import UIKit
+import RxSwift
+import RxFlow
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var window: UIWindow?
+    
+    private let coordinator = FlowCoordinator()
+    
+    private lazy var appServices = AppServices(giftsService: GiftService())
+    
+    private let bag = DisposeBag()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        guard let window = self.window else { return false }
+        
+        coordinator.rx.willNavigate
+            .catchError { _ in .empty() }
+            .bind { (flow, step) in print("will navigate to flow=\(flow) and step=\(step)") }
+            .disposed(by: bag)
+        
+        let appFlow = AppFlow(services: appServices)
+        
+        Flows.whenReady(flow1: appFlow) { (root) in
+            window.rootViewController = root
+            window.makeKeyAndVisible()
+        }
+        
+        coordinator.coordinate(flow: appFlow, with: AppStepper())
+        
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
+    
 }
 
+struct AppServices: HasGiftService {
+    let giftsService: GiftService
+}
